@@ -1,0 +1,138 @@
+# Armenia-related patterns (one per line, regex format)
+# Comments start with # and are ignored
+#
+# FALSE POSITIVES REMOVED:
+# - "ван" (4.8M matches) - too generic, matches Russian "ванна", "ванный", etc.
+# - "армавир" (15K matches) - major Russian city in Krasnodar Krai, not Armenia
+# - "тарс", "карс", "муш", "адана", "малатья", "эрзурум", "битлис", "диарбекир", 
+#   "сасун", "зайтун", "мараш", "урфа", "халеб", "алеппо" - Turkish cities, 
+#   historically Armenian but now cause false positives
+# - "нахичеван" (24K matches) - now in Azerbaijan
+# - "джульфа" - multiple places with this name
+# - "саак", "рубен", "ашот", "левон", "вардан", "абас" - common names in multiple cultures
+# - "лаваш", "толма", "хаш" - foods eaten in many countries, not uniquely Armenian
+
+# Basic Armenia terms
+армени[яией]
+армян[аеиоы]?
+армянск[ийогоую]
+армен
+
+# Cities and regions (Armenia and Armenian-populated areas)
+ереван
+карабах
+арцах
+гюмри
+ванадзор
+раздан
+аштарак
+гавар
+севан
+мегри
+капан
+сисиан
+горис
+степанакерт
+шуш[иы]
+мартуни
+масис
+арташат
+варденис
+иджеван
+апаран
+ташир
+спитак
+алаверди
+каджаран
+мецамор
+арени
+дсех
+вагаршапат
+эчмиадзин
+звартноц
+
+# Historical regions and places (within Armenian context)
+килики[яи]
+урарту
+нор-джуга
+тигранакерт
+двин
+васпуракан
+# Note: "двин" is historical Armenian capital, but verify context to avoid false positives
+
+# Historical figures and names (distinctly Armenian)
+тигран
+арташес
+аршак
+вараздат
+вагарш
+хосров
+трдат
+варам
+гагик
+смбат
+торос
+вазген
+гарегин
+католикос
+католик[ос]
+мамиконян
+арцруни
+багратуни
+маштоц
+месроп
+саака
+нварсак
+егише
+мхитар
+аракел
+киракос
+аревелц[и]
+аревелц
+
+# Cultural and religious terms
+вардапет
+вардапет[аы]
+татев
+санаин
+агарцин
+гегард
+хорвирап
+эчмиадзинск[ийогоую]
+католикосат
+католикос[аы]
+
+
+# Language and alphabet
+армянск[ийогоую]
+грабар
+ашхарабар
+# Note: месроп and маштоц already listed in historical figures section
+
+
+# Surnames and name patterns
+-ян$
+-янц
+-уни$
+-янц[иы]
+-янц[иы]?
+
+# Historical events and terms
+асла[ая]
+спюрк
+
+# Geographic features
+арарат
+арагац
+# Note: "масис" and "севан" already listed in cities section
+# Note: "ван" removed - too generic, matches Russian "ванна" (bathtub) and many other words
+
+# Food and culture (removed generic terms that appear in multiple cuisines)
+# Note: лаваш, толма, хаш are eaten in many countries, not uniquely Armenian
+
+# Organizations and institutions
+дашнак
+дашнакцутюн
+хнч
+# Note: армянск[ийогоую] already listed in basic Armenia terms and language sections
+

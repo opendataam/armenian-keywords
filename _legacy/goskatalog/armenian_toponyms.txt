@@ -1,0 +1,190 @@
+# Armenian and Armenian-Related Toponyms
+# Extracted from places.txt for identifying Armenia-related database records
+
+## Country/Republic Names
+Армения
+Armenia
+Армянская ССР
+Армянская Советская Социалистическая Республика
+Армянская республика
+Армянская АССР
+Республика Армения
+Социалистическая Советская Республика Армения
+Демократическая Республика Армения
+Первая Республика Армения
+Закавказская СФСР (ЗСФСР) - when combined with Armenian locations
+
+## Major Cities
+Ереван
+Эривань
+Эриван
+Yerevan
+Гюмри
+Ленинакан
+Александрополь
+Ванадзор
+Кировакан
+Караклис
+Горис
+Дилижан
+Цахкадзор
+Спитак
+Раздан
+Арташат
+Армавир (when in Armenian SSR context)
+Аштарак
+Абовян
+Степанаван
+Иджеван
+Эчмиадзин
+Вагаршапат
+Камо
+Октемберян (now Армавир)
+Чаренцаван
+Мартуни
+Алаверди
+Алаверды
+
+## Regions and Provinces
+Сюникская обл.
+Сюник
+Зангезур
+Арагацотнская обл.
+Арагацотн
+Арагац
+Котайкская обл.
+Котайская обл.
+Коктайская обл.
+Лорийская обл.
+Гехаркуникская обл.
+Армавирская обл.
+Ширак
+Эриваньская губерния
+Эриванская губерния
+Эриванский уезд
+Александропольский уезд
+Новобаязетский уезд
+Зангезурский уезд
+
+## Historical and Alternative Names
+Эривань (historical name for Ереван)
+Эриван (historical name for Ереван)
+Александрополь (historical name for Гюмри/Ленинакан)
+Ленинакан (Soviet name for Гюмри)
+Кировакан (Soviet name for Ванадзор)
+Караклис (historical name for Ванадзор)
+Октемберян (Soviet name for Армавир)
+Камо (Soviet name for Гавar)
+
+## Historical Regions
+Киликийская Армения
+Киликия (when Armenian context)
+Западная Армения
+Восточная Армения
+Турецкая Армения
+Российская империя, Армения
+Российская империя, Эриванская губ.
+
+## Related Regions (for context)
+Нагорный Карабах
+Нагорно-Карабахская республика
+Нагорно-Карабахская АО
+Нагорно-Карабахская автономная область
+Степанакерт
+Карабах (when Armenian context)
+Арцах
+
+## Geographic Features
+оз. Севан
+Севан
+Севанский (prefix for various institutions)
+Арарат
+Масис
+Гегард
+Арагац (mountain)
+
+## Districts and Settlements
+Аштаракский р-н
+Горисский р-н
+Абовянский район
+Арагацотнская обл.
+Мартунинский р-н
+Артикский р-н
+Разданский район
+Степанаванский р-н
+Иджеванский р-н
+Октемберянский р-он
+Апаранский р-он
+Шамшадинский район
+Камарлинский район
+Горисский район
+Елизаветполь (when Armenian context)
+
+## Specific Villages and Settlements
+Ошакон
+Ошакан
+Бюракан
+Гарни
+Арзни
+Артик
+Канакер
+Арич
+Ахпат
+Одзун
+Татев
+Джрбер
+Фиолетово
+Фонтан
+Цовагюх
+Цоволюх
+Гюллибулаг
+Санаин
+Санаик
+Алавердский р-н
+Каджаран
+Мегри
+Джарабер
+Егвард
+Багаран
+Мгарт
+Карин
+Джадмурский перевал
+Кучак
+Аршалуйс
+Анаствац
+Герюсы
+Дзорагюх
+Дзарагюх
+Дзора
+Айгезард
+Васькеваз
+Танжелу (Мравян)
+Артени
+Хндзореск
+Ачаджур
+
+## Administrative and Institutional Terms
+Армянская ССР (various spellings)
+АрмССР
+АССР (when Armenian context)
+Арм. ССР
+Арм.ССР
+АрмССР
+Арм. ССР
+АрмянскаяССР
+
+## Geographic Context Terms
+Кавказ, Армения
+Закавказье (Армения)
+Азия, Армения
+Кавказ регион, Армения республика
+Крымско-Кавказский регион, возможно Армения
+
+## Notes for Database Matching
+- Some toponyms appear in multiple forms (e.g., Ереван/Эривань, Гюмри/Ленинакан/Александрополь)
+- "Армавир" can refer to both a city in Russia (Krasnodar Krai) and a city in Armenia - check context
+- "Карабах" and "Нагорный Карабах" are historically Armenian regions
+- "Закавказье" (Transcaucasia) includes Armenia but also Georgia and Azerbaijan - check for Armenian-specific context
+- Historical names (Эривань, Александрополь) should match modern equivalents (Ереван, Гюмри)
+- Regional names like "Сюникская обл." or "Арагацотнская обл." are strong indicators
+- Terms like "Армянская ССР" or "Армения" combined with any location name indicate Armenian context
