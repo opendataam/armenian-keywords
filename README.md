@@ -17,7 +17,9 @@ data/
 │   └── surnames.csv
 ├── en/          # English language data
 │   ├── geonames.csv
-│   └── keywords.csv
+│   ├── keywords.csv
+│   ├── names.csv
+│   └── surnames.csv
 └── [lang]/      # Other languages (see guidelines below)
     ├── geonames.csv
     └── keywords.csv
@@ -64,6 +66,15 @@ The repository has been updated with data extracted from `_legacy/goskatalog/` d
 - **Names**: 51 entries including historical figures (Тигран, Арташес, Маштоц, Месроп, etc.)
 
 - **Midnames**: 41 entries (patronymics like арменович, арменовна, etc.)
+
+### English Data Expansion
+
+The English dataset has been significantly expanded to match the coverage of the Russian dataset:
+
+- **Geonames**: Extended to ~80 entries covering major cities, regions, and historical places.
+- **Keywords**: Expanded to ~47 entries covering cultural, historical, and key figures.
+- **Names**: Added new file with ~56 common Armenian given names.
+- **Surnames**: Added new file with ~55 common Armenian surnames (including variations).
 
 ## Adding Keywords in Other Languages
 
