@@ -71,10 +71,10 @@ The repository has been updated with data extracted from `_legacy/goskatalog/` d
 
 The English dataset has been significantly expanded to match the coverage of the Russian dataset:
 
-- **Geonames**: Extended to ~80 entries covering major cities, regions, and historical places.
-- **Keywords**: Expanded to ~47 entries covering cultural, historical, and key figures.
-- **Names**: Added new file with ~56 common Armenian given names.
-- **Surnames**: Added new file with ~55 common Armenian surnames (including variations).
+- **Geonames**: Extended to 79 entries covering major cities, regions, and historical places.
+- **Keywords**: Expanded to 42 entries covering cultural, historical, and key figures.
+- **Names**: Added new file with 54 common Armenian given names.
+- **Surnames**: Added new file with 54 common Armenian surnames (including variations).
 
 ## Adding Keywords in Other Languages
 

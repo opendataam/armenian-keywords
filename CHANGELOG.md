@@ -12,10 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **English Data Expansion**: Significantly extended the English dataset coverage:
-  - `names.csv`: Added ~56 entries of common Armenian given names
-  - `surnames.csv`: Added ~55 entries of common Armenian surnames
-  - `geonames.csv`: Expanded to ~80 entries (was 4)
-  - `keywords.csv`: Expanded to ~47 entries (was 2)
+  - `names.csv`: Added 54 entries of common Armenian given names
+  - `surnames.csv`: Added 54 entries of common Armenian surnames
+  - `geonames.csv`: Expanded to 79 entries (was 4)
+  - `keywords.csv`: Expanded to 42 entries (was 2)
 
 ## [1.1.0] - 2025-12-26
 
