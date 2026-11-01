@@ -96,7 +96,6 @@ value,category,id
 дилижан,geoname,dilijan
 дсех,geoname,
 егвард,geoname,yeghvard
-елизаветполь,geoname,
 ереван,geoname,yerevan
 ереруй,geoname,
 ехегнадзор,geoname,yeghegnadzor
@@ -108,15 +107,12 @@ value,category,id
 иджеванский р-н,geoname,
 каджаран,geoname,kajaran
 камарлинский район,geoname,
-камо,geoname,
 канакер,geoname,
 капан,geoname,kapan
-карабах,geoname,karabakh
 караклис,geoname,vanadzor
 карвачар,geoname,karvachar
 кечарис,geoname,
 киликийская армения,geoname,
-киликия,geoname,cilicia
 кировакан,geoname,vanadzor
 кобайр,geoname,
 ковсакан,geoname,
@@ -140,6 +136,7 @@ value,category,id
 мегри,geoname,meghri
 мецамор,geoname,metsamor
 миджнаван,geoname,
+мравян,geoname,
 мугни,geoname,
 мшкаванк,geoname,
 нагорно-карабахская автономная область,geoname,
@@ -182,8 +179,6 @@ value,category,id
 ташир,geoname,tashir
 тегер,geoname,
 тигранакерт,geoname,
-тифлис,geoname,
-тифлиская,geoname,
 туманян,geoname,
 турецкая армения,geoname,
 урарту,geoname,urartu

@@ -61,50 +61,26 @@ Where:
 
 `ambiguous.csv` uses the same format and the same categories. It holds values that are Armenia-related but match too much unrelated content when used alone:
 
-- places outside Armenia or homonyms of places elsewhere (`армавир` is also a city in Krasnodar Krai, `kars`, `nakhichevan`)
-- words or names common in other languages and cultures (`david`, `cher`, `gregorian`, `лаваш`, `ашот`)
+- places outside Armenia and Artsakh, or homonyms of places elsewhere (`армавир` is also a city in Krasnodar Krai, `тифлис`, `kars`, `nakhichevan`)
+- toponyms with large non-Armenian contexts (`карабах`: Karabakh carpets; `киликия`, `cilicia`: Roman Cilicia)
+- words or names common in other languages and cultures (`david`, `cher`, `gregorian`, `лаваш`, `ашот`, `баян`, `крестьян`)
 - surname suffixes, category `suffix`, matched at the end of a word (`ян`, `янц`, `уни`)
 
-Do not use these values alone as a filter. Require another match from the main files in the same record. Most Russian entries come from the exclusion lists in `_legacy/goskatalog/patterns.txt` and `armenian_toponyms.txt`.
+Do not use these values alone as a filter. Require another match from the main files in the same record. Most Russian entries come from the exclusion lists and the "when Armenian context" notes in `_legacy/goskatalog/patterns.txt` and `armenian_toponyms.txt`.
 
-## Recent Changes
+## Matching
 
-### Data Cleanup and Armenian Data (Latest Update)
+The lists are designed for whole-word matching:
 
-- **Russian keywords** (`data/ru/keywords.csv`, 170 entries) rebuilt from `_legacy/goskatalog/armenian.txt`: standard inflected forms added (`армении`, `армянский`, `армяне`, `ереване`, `карабахский`), OCR errors and false positives removed, regex patterns from `patterns.txt` expanded to full word forms.
-- **Ambiguous values** moved to `ambiguous.csv` (ru: 42, en: 37, hy: 3).
-- **Categories fixed**: titles and terms moved from names to keywords, dynasties to surnames, villages and historical places from keywords to geonames.
-- **`id` column** added to all files to link translations across languages.
-- **Armenian data** added in `data/hy/`: 77 geonames, 32 keywords, 45 names, 28 surnames.
+1. **Normalize the text.** Convert it to lowercase. In Russian text, replace `ё` with `е`. In Armenian text, replace `եւ` with `և` (classical and Western Armenian spelling).
+2. **Match whole words and phrases.** A value matches only between word boundaries. Never match it as a substring: `армен` occurs inside `бармен`, `кармен`, `казарменный`. Values can contain spaces, hyphens and periods (`оз. севан`, `нор-джуга`, `арм. сср`). Match them as literal phrases.
+3. **Do not stem.** Russian `keywords.csv` lists inflected forms explicitly. A few values are catalog abbreviations (`армянск`, `ереванск`).
+4. **Match `suffix` values at the end of a word.** `ян` matches `саргсян`.
+5. **Use `ambiguous.csv` only with context.** Count a match from it only together with a match from the main files in the same record.
 
-### Processing Goskatalog Data
+## Changes
 
-The repository has been updated with data extracted from `_legacy/goskatalog/` directory:
-
-- **Geonames**: 225 entries extracted from `armenian_toponyms.txt` including:
-  - Major cities (Ереван, Гюмри, Ванадзор, etc.)
-  - Historical regions (Карабах, Арцах, Киликия, etc.)
-  - Geographic features (Арарат, Севан, etc.)
-  - Historical and alternative names
-
-- **Keywords**: 110 entries extracted from `patterns.txt` and filtered from `armenian.txt`:
-  - Basic Armenia terms (армения, армянин, армянский, etc.)
-  - Cultural and religious terms (вардапет, католикос, etc.)
-  - Historical terms (урарту, спюрк, etc.)
-  - Filtered out false positives (бармен, жандармен, etc.)
-
-- **Names**: 51 entries including historical figures (Тигран, Арташес, Маштоц, Месроп, etc.)
-
-- **Midnames**: 41 entries (patronymics like арменович, арменовна, etc.)
-
-### English Data Expansion
-
-The English dataset has been significantly expanded to match the coverage of the Russian dataset:
-
-- **Geonames**: Extended to 79 entries covering major cities, regions, and historical places.
-- **Keywords**: Expanded to 42 entries covering cultural, historical, and key figures.
-- **Names**: Added new file with 54 common Armenian given names.
-- **Surnames**: Added new file with 54 common Armenian surnames (including variations).
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## Adding Keywords in Other Languages
 
@@ -259,9 +235,9 @@ High priority for adding keywords:
 
 ## Legacy Data
 
-Historical data and source files are preserved in the `_legacy/` directory:
+Historical data and source files are preserved unchanged in the `_legacy/` directory:
 - `_legacy/goskatalog/` - Original Russian Goskatalog keyword lists
-- `_legacy/data/` - Previous data structure
+- `_legacy/data/` - Data files of the 1.0.0 release (flat structure, columns `ru,en,am,category`)
 
 ## License
 
