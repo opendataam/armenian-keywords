@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **`id` column** in all CSV files (`value,category,id`): concept key shared across languages, the English canonical form in lowercase (e.g. `ереван`, `эривань`, `erivan`, `երևան` → `yerevan`). Restores the cross-language links of the original `ru,en,am,category` format. Empty when no link is recorded.
+- **Armenian data** in `data/hy/`: 77 geonames, 32 keywords, 45 names, 28 surnames, all linked to English via `id`.
+- **`ambiguous.csv`** in `data/ru/` (42), `data/en/` (37) and `data/hy/` (3): values that need context to avoid false positives. Includes the exclusion lists from `_legacy/goskatalog/patterns.txt` (`армавир`, `карс`, `нахичевань`, `ашот`, `левон`, `лаваш`, `толма`, ...) and surname suffixes from its regexes (`ян`, `янц`, `янци`, `янцы`, `уни`) under the new `suffix` category.
+- `data/ru/keywords.csv`: literal word forms for regexes in `patterns.txt` (`вардапет[аы]`, `католикос[аы]`, `килики[яи]`, `эчмиадзинск[ийогоую]`, `аревелц[и]`, `хнч` → `хнчак`, `гнчак`).
+
+### Changed
+
+- **`data/ru/keywords.csv` rebuilt** from `_legacy/goskatalog/armenian.txt` (107 → 170 entries). It now includes standard inflected forms that were missing (`армяне`, `армянский`, `армянская`, `армении`, `армению`, `армянка`, `ереване`, `ереванский`, `карабахский`, `древнеармянский`, ...). Pre-reform spellings are kept, with Latin `i` from OCR replaced by Cyrillic `і`.
+- **Categories fixed** in `data/ru/`:
+  - `католикос`, `нварсак`, `аревелц` (as `аревелци`): names → keywords
+  - `мамиконян`, `арцруни`, `багратуни`: names → surnames
+  - `арменак`, `арменуи`: keywords → names
+  - `арменян`, `ереванян`: keywords → surnames
+  - `арени`, `дсех`, `тигранакерт`, `васпуракан`, `нор-джуга`, `хорвирап`, `арменикенд`: keywords → geonames
+  - `армян`: geonames → keywords
+- **Moved to `ambiguous.csv`**:
+  - ru: `армавир`, `закавказье`, `закавказская сфср`, `эрзерум`, `карин`, `двин` (geonames); `ашот`, `саака` (names)
+  - en: `armavir`, `kars`, `nakhichevan`, `ani`, `berd`, `talin`, `vedi` (geonames); `ashot`, `levon`, `vardan`, `david`, `robert`, `karen`, `edgar`, `artur`, `valery`, `mariam`, `anais`, `ani`, `aram`, `armen`, `arman`, `petros`, `shushan`, `grigor`, `naira`, `gor`, `sevak`, `arsen` (names); `lavash`, `tolma`, `dolma`, `gregorian`, `cher`, `asala`, `kim kardashian` (keywords); `gregorian` (surnames)
+- `веди`, `фиолетово`, `фонтан` and `асср`, removed from `data/ru/geonames.csv` in 1.2.0, are restored in `data/ru/ambiguous.csv`.
+
+### Removed
+
+- `data/ru/keywords.csv`: OCR errors and glued tokens (`армянскйо`, `армянсокго`, `армянскомм`, `армянв`, `армяниназахара`, `армянскомуписателю`, `ереванеметодом`, ...); false positives (`армендарис`, `арменонвиль`, `арменопул`, `арментерос`, `арменит`, `арменкино`, ...); stems truncated from regexes (`асла`, `килики`, `эчмиадзинск`).
+- `data/ru/geonames.csv`: descriptive strings with commas (`"кавказ, армения"`, `"российская империя, армения"`, ...) and `армен` (already in `names.csv`).
+- `data/en/keywords.csv`: `hayk` (kept in `names.csv`).
+
 ## [1.2.0] - 2025-12-27
 
 ### Added

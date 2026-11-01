@@ -10,12 +10,20 @@ All data files are comma-separated CSV files organized by language in the `data/
 ```
 data/
 ├── ru/          # Russian language data
+│   ├── ambiguous.csv
 │   ├── geonames.csv
 │   ├── keywords.csv
 │   ├── midnames.csv
 │   ├── names.csv
 │   └── surnames.csv
 ├── en/          # English language data
+│   ├── ambiguous.csv
+│   ├── geonames.csv
+│   ├── keywords.csv
+│   ├── names.csv
+│   └── surnames.csv
+├── hy/          # Armenian language data
+│   ├── ambiguous.csv
 │   ├── geonames.csv
 │   ├── keywords.csv
 │   ├── names.csv
@@ -30,12 +38,13 @@ data/
 All CSV files follow the same structure:
 
 ```csv
-value,category
+value,category,id
 ```
 
 Where:
 - `value` - the keyword, name, or place name
-- `category` - one of: `keyword`, `geoname`, `name`, `surname`, `midname`
+- `category` - one of: `keyword`, `geoname`, `name`, `surname`, `midname`, `suffix`
+- `id` - concept key shared across languages: the English canonical form in lowercase. For example, `ереван`, `эривань`, `erivan` and `երևան` all have the id `yerevan`. Empty when no cross-language link is recorded yet.
 
 ### Categories
 
@@ -44,10 +53,31 @@ Where:
 - **names.csv** - First names (given names)
 - **surnames.csv** - Family names (last names)
 - **midnames.csv** - Middle names / patronymics
+- **ambiguous.csv** - Values that need context (see below)
+
+`geonames.csv` and `names.csv` hold base (nominative) forms. Russian `keywords.csv` also holds inflected forms and pre-reform spellings (`армянскаго`, `армянскій`, `арменія`) of Armenia-related words.
+
+### Ambiguous Values
+
+`ambiguous.csv` uses the same format and the same categories. It holds values that are Armenia-related but match too much unrelated content when used alone:
+
+- places outside Armenia or homonyms of places elsewhere (`армавир` is also a city in Krasnodar Krai, `kars`, `nakhichevan`)
+- words or names common in other languages and cultures (`david`, `cher`, `gregorian`, `лаваш`, `ашот`)
+- surname suffixes, category `suffix`, matched at the end of a word (`ян`, `янц`, `уни`)
+
+Do not use these values alone as a filter. Require another match from the main files in the same record. Most Russian entries come from the exclusion lists in `_legacy/goskatalog/patterns.txt` and `armenian_toponyms.txt`.
 
 ## Recent Changes
 
-### Processing Goskatalog Data (Latest Update)
+### Data Cleanup and Armenian Data (Latest Update)
+
+- **Russian keywords** (`data/ru/keywords.csv`, 170 entries) rebuilt from `_legacy/goskatalog/armenian.txt`: standard inflected forms added (`армении`, `армянский`, `армяне`, `ереване`, `карабахский`), OCR errors and false positives removed, regex patterns from `patterns.txt` expanded to full word forms.
+- **Ambiguous values** moved to `ambiguous.csv` (ru: 42, en: 37, hy: 3).
+- **Categories fixed**: titles and terms moved from names to keywords, dynasties to surnames, villages and historical places from keywords to geonames.
+- **`id` column** added to all files to link translations across languages.
+- **Armenian data** added in `data/hy/`: 77 geonames, 32 keywords, 45 names, 28 surnames.
+
+### Processing Goskatalog Data
 
 The repository has been updated with data extracted from `_legacy/goskatalog/` directory:
 
@@ -102,6 +132,9 @@ Optionally add:
 - `names.csv` - First names (if applicable)
 - `surnames.csv` - Family names (if applicable)
 - `midnames.csv` - Middle names/patronymics (if applicable)
+- `ambiguous.csv` - Values that need context (if applicable)
+
+Fill the `id` column with the English canonical form of the concept, as used in `data/en/`. Leave it empty if there is no English equivalent.
 
 ### 3. Translation Guidelines
 
@@ -159,31 +192,30 @@ Include:
 
 #### Spanish (data/es/keywords.csv)
 ```csv
-value,category
-armenia,keyword
-armenio,keyword
-armenios,keyword
-armenia,keyword
-armenio/a,keyword
-catolicós,keyword
-vardapet,keyword
-urartu,keyword
-cilicia,keyword
-diáspora armenia,keyword
+value,category,id
+armenio,keyword,armenian
+armenia,keyword,armenian
+armenios,keyword,armenians
+armenias,keyword,armenians
+catolicós,keyword,catholicos
+vardapet,keyword,vardapet
+diáspora armenia,keyword,armenian diaspora
 ```
 
 #### Spanish (data/es/geonames.csv)
 ```csv
-value,category
-armenia,geoname
-república de armenia,geoname
-ereván,geoname
-gyumri,geoname
-vanadzor,geoname
-karabaj,geoname
-artsaj,geoname
-ararat,geoname
-sevan,geoname
+value,category,id
+armenia,geoname,armenia
+república de armenia,geoname,armenia
+ereván,geoname,yerevan
+gyumri,geoname,gyumri
+vanadzor,geoname,vanadzor
+alto karabaj,geoname,nagorno-karabakh
+artsaj,geoname,artsakh
+urartu,geoname,urartu
+cilicia,geoname,cilicia
+ararat,geoname,ararat
+sevan,geoname,sevan
 ```
 
 ### 5. Quality Guidelines
@@ -200,7 +232,7 @@ sevan,geoname
 After adding new language data:
 1. Verify CSV files are valid (no syntax errors)
 2. Check for duplicates within the file
-3. Ensure category values are correct (`keyword`, `geoname`, `name`, `surname`, `midname`)
+3. Ensure category values are correct (`keyword`, `geoname`, `name`, `surname`, `midname`, `suffix`)
 4. Test with sample queries to ensure keywords match relevant content
 
 ## Contribution

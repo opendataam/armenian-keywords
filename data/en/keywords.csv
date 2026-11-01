@@ -1,43 +1,35 @@
-value,category
-armenian,keyword
-armenians,keyword
-hayastan,keyword
-hayk,keyword
-khachkar,keyword
-duduk,keyword
-tsitsernakaberd,keyword
-matenadaran,keyword
-catholicos,keyword
-vardapet,keyword
-grabar,keyword
-ashkharabar,keyword
-spyurk,keyword
-dashnak,keyword
-dashnaktsutyun,keyword
-hunchak,keyword
-hunchakian,keyword
-ramgavar,keyword
-agbu,keyword
-asala,keyword
-lavash,keyword
-khorovats,keyword
-tolma,keyword
-dolma,keyword
-gregorian,keyword
-mesrop mashtots,keyword
-komitas,keyword
-aram khachaturian,keyword
-charles aznavour,keyword
-william saroyan,keyword
-serj tankian,keyword
-kim kardashian,keyword
-alexis ohanian,keyword
-cher,keyword
-kirk kirkorian,keyword
-tigranes the great,keyword
-tigran mets,keyword
-armenian alphabet,keyword
-armenian language,keyword
-armenian church,keyword
-armenian genocide,keyword
-armenian diaspora,keyword
+value,category,id
+armenian,keyword,armenian
+armenians,keyword,armenians
+hayastan,keyword,hayastan
+khachkar,keyword,khachkar
+duduk,keyword,duduk
+tsitsernakaberd,keyword,tsitsernakaberd
+matenadaran,keyword,matenadaran
+catholicos,keyword,catholicos
+vardapet,keyword,vardapet
+grabar,keyword,grabar
+ashkharabar,keyword,ashkharabar
+spyurk,keyword,spyurk
+dashnak,keyword,dashnak
+dashnaktsutyun,keyword,dashnaktsutyun
+hunchak,keyword,hunchak
+hunchakian,keyword,hunchakian
+ramgavar,keyword,ramgavar
+agbu,keyword,agbu
+khorovats,keyword,khorovats
+mesrop mashtots,keyword,mesrop mashtots
+komitas,keyword,komitas
+aram khachaturian,keyword,aram khachaturian
+charles aznavour,keyword,charles aznavour
+william saroyan,keyword,william saroyan
+serj tankian,keyword,serj tankian
+alexis ohanian,keyword,alexis ohanian
+kirk kirkorian,keyword,kirk kirkorian
+tigranes the great,keyword,tigranes the great
+tigran mets,keyword,tigran mets
+armenian alphabet,keyword,armenian alphabet
+armenian language,keyword,armenian language
+armenian church,keyword,armenian church
+armenian genocide,keyword,armenian genocide
+armenian diaspora,keyword,armenian diaspora
